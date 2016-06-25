@@ -1,0 +1,173 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="children.master.vb" Inherits="HomeMaster.children" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+     <link rel="icon" type="image/png" href="Logos/favicon1.png" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="wrapper">
+    <form id="form1" runat="server">
+        <div id="header">
+        <div class="header1">
+            <div class="logo">
+                <asp:HyperLink ID="logo_hlink" runat="server" NavigateUrl="~/children_home_form.aspx">
+                    <asp:Image ID="weblogo_img" ImageUrl="~/Logos/weblogo2.gif" Height ="200px" Width="500px" runat="server"  />
+                </asp:HyperLink>
+            </div>
+            <div class="login_box">
+               <table style="width:300px;">
+                    <tr>
+                        <td>
+                            <asp:Label ID="welcome_lbl" runat="server" Text="Welcome : " CssClass="fontchange"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:Label ID="user_lbl" CssClass="fontchange" runat="server" Text="Label"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:Button ID="logout_btn" runat="server" Text="logout" CssClass="btn"  /> 
+                        </td>
+                         <td>
+                            <asp:Button ID="btn_setting" runat="server" Text="Setting" CssClass="btn"  /> 
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+            </div>
+       <div id="navigation">
+           <ul id="menu-bar">
+                 <li ><a href="./children_home_form.aspx">Home</a></li>
+                <li><a href="#">Shopping</a>
+                   <ul>
+                       <li><a href="./children_shoping_list.aspx">view shopping lists</a></li>
+                       <li><a href="./children_view_by_category.aspx">view by category</a></li>
+                       <li><a href="./children_create_shp_list.aspx">create new list</a></li>
+                       <li><a href="./children_generate_list.aspx">Generate list</a></li>
+                        <li><a href="./children_stock_control.aspx">Stock control</a></li>
+                   </ul>
+               </li>
+               <li><a href="#">Family</a>
+                   <ul>
+                   <li><a href="./children_msg.aspx">Messaging</a></li>
+                  </ul>
+               </li>
+                <li><a href="#">Finance</a>
+                   <ul>
+                   <li><a href="./children_add_expenses.aspx">Add expense</a></li>
+                   <li><a href="./children_add_income.aspx">Add income</a></li>
+                   <li><a href="./children_view_expense.aspx">View expense</a></li>
+                   <li><a href="./children_view_income.aspx">view income</a></li>
+                  </ul>
+               </li>
+               <li><a href="#">Note</a>
+                   <ul>
+                   <li><a href="./children_view_note.aspx">View note</a></li>
+                   <li><a href="./children_add_note.aspx">Add note</a></li>
+                  </ul>
+               </li>
+               <li>
+                   <asp:ImageButton ID="btn_notification" CssClass="imgnotifChildren" ImageUrl="./notification/nonotif.png" runat="server" />
+               </li>
+            </ul> 
+        </div>
+        <div>
+            <asp:Panel ID="Panel_notification" Visible="false" CssClass="panlNotif"  runat="server">
+                <table>
+                    <tr>
+                        <td>
+                            <asp:Label ID="lbl_share_list_notif" CssClass="notifdetail" Visible="false"   runat="server" Text="A user shared a list with you"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="lbl_msg_notif" CssClass="notifdetail" Visible="false"   runat="server" Text="New message from a user"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br />
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                            <asp:Label ID="lbl_stock_notif" CssClass="notifdetail" Visible="false"  runat="server" Text="product is about to finish"></asp:Label>
+                        </td>
+                    </tr>
+                </table>
+            </asp:Panel>
+        </div>
+         <div>
+            <asp:Panel ID="Panel_setting" Visible="false" CssClass="panlset" runat="server">
+               <div>
+                 <table>
+                    <tr>
+                        <td>
+                            <asp:Button  ID="btn_view_user_info" CssClass="set_btn" runat="server" Text="View user information" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Button ID="btn_theme_setting" CssClass="set_btn" runat="server" Text="Theme setting" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Button ID="btn_general_info_setting" CssClass="set_btn" runat="server" Text="General setting" />
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           <asp:Button ID="Btn_mail_setting" CssClass="set_btn" runat="server" Text="Mail setting" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           <asp:Button ID="btn_password_setting" CssClass="set_btn" runat="server" Text="Password setting" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           <asp:Button ID="btn_username_setting" CssClass="set_btn" runat="server" Text="Username setting" />
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           <asp:Button ID="btn_security_setting" CssClass="set_btn" runat="server" Text="Security setting" />
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           <asp:Button ID="btn_deactivate_account" CssClass="set_btn" runat="server" Text="Deactivate Account" />
+                        </td>
+                    </tr>
+                </table>
+                   </div>
+            </asp:Panel>
+        </div>
+   <div id="content">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+        <div id="footer">
+            <div class="footerContent">
+                <div >
+                    <p>&copy; 2015, HomeMaster &reg;, All Rights Reserved</p>
+                    
+                </div>
+            </div>
+        </div>
+    </form>
+        </div>
+</body>
+</html>

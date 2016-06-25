@@ -1,0 +1,103 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false"  CodeBehind="guest.master.vb"   Inherits="HomeMaster.guest" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="icon" type="image/png" href="Logos/favicon1.png" />
+   
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="wrapper">
+    <form id="form1" runat="server">
+        <div id="header">
+        <div class="header1">
+            <div class="logo">
+                <asp:HyperLink ID="logo_hlink" runat="server" NavigateUrl="~/Default.aspx">
+                    <asp:Image ID="weblogo_img" ImageUrl="~/Logos/weblogo2.gif" Height ="200px" Width="500px" runat="server"  />
+                </asp:HyperLink>
+            </div>
+            <div class="login_box">
+                <table style="width:315px;">
+                    <tr>
+                        <td>
+                             <asp:Label ID="username_lbl" runat="server" Text="Username :" CssClass="fontchange"></asp:Label>
+                        </td>
+                        <td>
+                             <asp:TextBox ID="username_txtbx" runat="server" CssClass="txtbx-css"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="password_lbl" runat="server" Text="Password :" CssClass="fontchange"></asp:Label>
+                        </td>
+                        <td>
+                             <asp:TextBox ID="password_txtbx" TextMode="password" runat="server" CssClass="txtbx-css"></asp:TextBox>
+                        </td>
+                        <td>
+                            <asp:Button ID="login_btn" runat="server" Text="Login" CssClass="btn"  />
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                  <tr>
+                        <td>
+                            <asp:CheckBox ID="remember_ckbx" Text="remember me / "  runat="server" />
+                        </td>
+                          <td>
+                            <asp:HyperLink ID="forgetPwd_link" runat="server" CssClass="forgetPWD" NavigateUrl="~/guest_forgetPWD_form.aspx">Forget Password</asp:HyperLink>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                   <tr>
+                        <td>
+                             <p >New to HomeMaster click <asp:HyperLink ID="HyperLink1"  NavigateUrl="~/guest_register_form.aspx" runat="server">here</asp:HyperLink> to register </p>
+                        </td>
+                    </tr>
+                </table> 
+            </div>
+        </div>
+            </div>
+       <div id="navigation">
+           <ul id="menu-bar">
+               <li><a href="./Default.aspx">Home</a></li>
+               <li><a href="#">Overview</a>
+                   <ul>
+                       <li><a href="./guest_over_family.aspx">Family Control</a></li>
+                       <li><a href="./guest_over_stock_control.aspx">Stock Control</a></li>
+                       <li><a href="./guest_over_shopping.aspx">Shopping management</a></li>
+                       <li><a href="./guest_over_fixed_asset.aspx">Asset management</a></li>
+                     
+                   </ul>
+               </li>
+               <li><a href="./guest_contact_us.aspx">Contact Us</a></li>
+               <li><a href="./guest_about_us.aspx">About Us</a></li>
+               <%-- <li><a href="./TEST.aspx">ALL TEST</a></li>--%>
+               
+           </ul>
+       </div>
+   <div id="content">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+        <div id="footer">
+            <div class="footerContent">
+                <div >
+                    <p>&copy; 2015, HomeMaster &reg;, All Rights Reserved</p>
+                    
+                </div>
+            </div>
+            
+        </div>
+
+       
+    </form>
+        </div>
+</body>
+</html>
